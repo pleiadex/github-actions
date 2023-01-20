@@ -1,0 +1,17 @@
+name: Circuit Test
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    name: string contain test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: GuillaumeFalourd/assert-command-line-output@v2.1
+      with:
+        command_line: cat output.txt
+        contains: VALID
+        expected_result: PASSED
