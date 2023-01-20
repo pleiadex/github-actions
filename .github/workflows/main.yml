@@ -12,4 +12,5 @@ jobs:
       with:
         command_line: cat output.txt
         contains: "INVALID"
-        expected_result: PASSED
+        expected_result: FAILED
+    - run : cat output.txt
