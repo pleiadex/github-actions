@@ -8,9 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: GuillaumeFalourd/assert-command-line-output@v2.1
-      with:
-        command_line: cat result.txt
-        assert_file_path: result.txt
-        expected_result: FAILED
+#     - uses: GuillaumeFalourd/assert-command-line-output@v2.1
+#       with:
+#         command_line: cat result.txt
+#         assert_file_path: result.txt
+#         expected_result: FAILED
     - run : cat result.txt
+
+    - uses: actions/checkout@v2.3.4
+    - uses: GuillaumeFalourd/diff-action@v1
+      with:
+        first_file_path: result.txt
+        second_file_path: result.txt
+        expected_result: FAILED
