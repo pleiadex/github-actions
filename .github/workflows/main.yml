@@ -11,6 +11,6 @@ jobs:
     - uses: GuillaumeFalourd/assert-command-line-output@v2.1
       with:
         command_line: cat result.txt
-        contains: "INVALID"
+        assert_file_path: result.txt
         expected_result: FAILED
     - run : cat result.txt
