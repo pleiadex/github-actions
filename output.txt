@@ -7,3 +7,4 @@
 [36;22m[DEBUG] [39;1mUniGro16js[0m:  ## Pairing time: 6 [ms] (1.399 %)
 [36;22m[DEBUG] [39;1mUniGro16js[0m:  ## Hashing time: 1 [ms] (0.233 %)
 VALID
+
