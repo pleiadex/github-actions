@@ -13,11 +13,11 @@ jobs:
 #         command_line: cat result.txt
 #         assert_file_path: result.txt
 #         expected_result: FAILED
-    - run : cat result.txt
+    - run : echo "VALID" > output.txt
 
     - uses: actions/checkout@v2.3.4
     - uses: GuillaumeFalourd/diff-action@v1
       with:
-        first_file_path: result.txt
+        first_file_path: output.txt
         second_file_path: result.txt
         expected_result: PASSED
