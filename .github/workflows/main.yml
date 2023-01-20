@@ -11,5 +11,5 @@ jobs:
     - uses: GuillaumeFalourd/assert-command-line-output@v2.1
       with:
         command_line: cat output.txt
-        contains: VALID
+        contains: INVALID
         expected_result: PASSED
