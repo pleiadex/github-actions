@@ -15,6 +15,6 @@ jobs:
                 image: pleiadex/amd64-circom:2.0.5
                 options: -v ${{ github.workspace }}:/var/www
                 run: |
-                      ls
-                      pwd
+                      cd circom-2.0.5
+                      cargo build --release && cargo install --path circom
                       circom --help
