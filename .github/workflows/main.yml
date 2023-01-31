@@ -18,7 +18,4 @@ jobs:
                 run: |
                       circom --help
                       source "$HOME/.cargo/env"
-                      cd circom-2.0.5
-                      ls
-                      cargo build --release
                       circom --help
