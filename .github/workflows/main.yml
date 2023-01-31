@@ -16,4 +16,5 @@ jobs:
                 options: -v ${{ github.workspace }}:/var/www
                 run: |
                       ls
+                      pwd
                       circom --help
