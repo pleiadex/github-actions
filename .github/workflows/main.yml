@@ -8,14 +8,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Check out the repo
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
           - name: Run the build process with Docker
             uses: addnab/docker-run-action@v3
             with:
                 image: pleiadex/amd64-circom:2.0.5
                 options: -v ${{ github.workspace }}:/var/www
                 run: |
+                      /bin/bash -c "circom --help"
                       /bin/bash -c "source $HOME/.cargo/env"
                       cd circom-2.0.5
-                      cargo build --release
-                      cargo install --path circom
+                      ls
+                      /bin/bash -c "cargo build --release"
+                      /bin/bash -c "cargo install --path circom"
+                      /bin/bash -c "circom --help"
