@@ -11,3 +11,6 @@ RUN curl -LO https://github.com/iden3/circom/archive/refs/tags/v2.0.5.zip
 RUN unzip v2.0.5.zip && cd circom-2.0.5
 RUN cargo build --release
 RUN cargo install --path circom
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
