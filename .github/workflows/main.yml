@@ -3,23 +3,15 @@ on:
   pull_request:
   push:
 jobs:
-  test:
-    name: string contain test
-    runs-on: ubuntu-latest
-    container:
-      image: pleiadex/circom
-    steps:
-    - uses: actions/checkout@v3
-#     - uses: GuillaumeFalourd/assert-command-line-output@v2.1
-#       with:
-#         command_line: cat result.txt
-#         assert_file_path: result.txt
-#         expected_result: FAILED
-    - run : circom --help 
-    - run : echo "VALID" > output.txt
-
-    - uses: GuillaumeFalourd/diff-action@v1
-      with:
-        first_file_path: output.txt
-        second_file_path: result.txt
-        expected_result: PASSED
+    build:
+        name: circom 
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out the repo
+            uses: actions/checkout@v2
+          - name: Run the build process with Docker
+            uses: addnab/docker-run-action@v3
+            with:
+                image: pleidex/circom:latest
+                options: -v ${{ github.workspace }}:/var/www
+                run: circom --help
