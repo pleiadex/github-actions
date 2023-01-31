@@ -19,4 +19,5 @@ jobs:
                       source "$HOME/.cargo/env"
                       circom --help
                       ls /var/www
-                      node
+          - name: check current directory
+            run : ls
