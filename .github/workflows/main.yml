@@ -21,5 +21,4 @@ jobs:
                       cd circom-2.0.5
                       ls
                       cargo build --release
-                      cargo install --path circom
                       circom --help
