@@ -12,6 +12,6 @@ jobs:
           - name: Run the build process with Docker
             uses: addnab/docker-run-action@v3
             with:
-                image: pleidex/circom:2.0.5
+                image: pleiadex/circom:2.0.5
                 options: -v ${{ github.workspace }}:/var/www
                 run: circom --help
